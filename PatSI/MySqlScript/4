@@ -1,0 +1,198 @@
+﻿DROP TABLE IF EXISTS `fun_filter`;
+CREATE TABLE `fun_filter` (
+  `Sid` varchar(25) NOT NULL,
+  PRIMARY KEY (`Sid`)
+) ENGINE=InnoDB DEFAULT CHARSET=gbk;
+
+DROP TABLE IF EXISTS `fun_filter_list`;
+create table `fun_filter_list`
+(
+		id int,
+		colname varchar(25),
+		tbname varchar(25),
+		coloperator varchar(25),
+		colval varchar(25),
+		hit varchar(20),
+		strsql varchar(20)
+)ENGINE=InnoDB DEFAULT CHARSET=gbk;
+
+/*
+Navicat MySQL Data Transfer
+
+Source Server         : fz
+Source Server Version : 50173
+Source Host           : localhost:3306
+Source Database       : ztst
+
+Target Server Type    : MYSQL
+Target Server Version : 50173
+File Encoding         : 65001
+
+Date: 2015-06-16 10:40:31
+*/
+
+SET FOREIGN_KEY_CHECKS=0;
+
+-- ----------------------------
+-- Table structure for cfg_stcolumn
+-- ----------------------------
+DROP TABLE IF EXISTS `cfg_stcolumn`;
+CREATE TABLE `cfg_stcolumn` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `col_name` varchar(20) DEFAULT NULL,
+  `showname` varchar(20) DEFAULT NULL,
+  `cl_type` varchar(20) DEFAULT NULL,
+  `tb_name` varchar(20) DEFAULT NULL,
+  `isst` tinyint(4) DEFAULT NULL,
+  `iscn` tinyint(4) DEFAULT NULL,
+  `iswpi` tinyint(4) DEFAULT NULL,
+  `isepodoc` tinyint(4) DEFAULT NULL,
+  `isidx` tinyint(4) DEFAULT NULL,
+  `isautoidx` tinyint(4) DEFAULT NULL,
+  `isdel` tinyint(4) DEFAULT NULL,
+  `show_order` int(8) DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=137 DEFAULT CHARSET=gbk;
+
+-- ----------------------------
+-- Records of cfg_stcolumn
+-- ----------------------------
+INSERT INTO `cfg_stcolumn` VALUES ('1', 'id', 'ID', 'int', 'st_dt', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `cfg_stcolumn` VALUES ('2', 'ztid', '专题库ID', 'int', 'st_dt', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `cfg_stcolumn` VALUES ('3', 'sid', '标识号', 'varchar', 'st_dt', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `cfg_stcolumn` VALUES ('4', 'an', '申请号', 'varchar', 'st_dt', '0', '1', '1', '1', '0', '0', '0', '0');
+INSERT INTO `cfg_stcolumn` VALUES ('5', 'ad', '申请日', 'varchar', 'st_dt', '0', '1', '1', '1', '0', '0', '0', '0');
+INSERT INTO `cfg_stcolumn` VALUES ('6', 'ady', '申请年', 'int', 'st_dt', '1', '1', '1', '1', '0', '0', '0', '0');
+INSERT INTO `cfg_stcolumn` VALUES ('7', 'pn', '公开号', 'varchar', 'st_dt', '0', '1', '1', '1', '0', '0', '0', '0');
+INSERT INTO `cfg_stcolumn` VALUES ('8', 'pd', '公开日', 'varchar', 'st_dt', '0', '1', '1', '1', '0', '0', '0', '0');
+INSERT INTO `cfg_stcolumn` VALUES ('9', 'pdy', '公开年', 'int', 'st_dt', '1', '1', '1', '1', '0', '1', '0', '0');
+INSERT INTO `cfg_stcolumn` VALUES ('10', 'gn', '授权号', 'varchar', 'st_dt', '0', '1', '0', '0', '0', '0', '0', '0');
+INSERT INTO `cfg_stcolumn` VALUES ('11', 'gd', '授权日', 'varchar', 'st_dt', '0', '1', '0', '0', '0', '0', '0', '0');
+INSERT INTO `cfg_stcolumn` VALUES ('12', 'gdy', '授权年', 'int', 'st_dt', '1', '1', '0', '0', '0', '1', '0', '0');
+INSERT INTO `cfg_stcolumn` VALUES ('13', 'pct_in', 'PCT进入中国日', 'varchar', 'st_dt', '0', '1', '0', '0', '0', '0', '0', '0');
+INSERT INTO `cfg_stcolumn` VALUES ('14', 'pct_an', 'PCT申请号', 'varchar', 'st_dt', '0', '1', '0', '0', '0', '0', '0', '0');
+INSERT INTO `cfg_stcolumn` VALUES ('15', 'pct_ad', 'PCT申请日', 'varchar', 'st_dt', '0', '1', '0', '0', '0', '0', '0', '0');
+INSERT INTO `cfg_stcolumn` VALUES ('16', 'pct_pn', 'PCT公开号', 'varchar', 'st_dt', '0', '1', '0', '0', '0', '0', '0', '0');
+INSERT INTO `cfg_stcolumn` VALUES ('17', 'pct_pd', 'PCT公开日', 'varchar', 'st_dt', '0', '1', '0', '0', '0', '0', '0', '0');
+INSERT INTO `cfg_stcolumn` VALUES ('18', 'm_ad', '母案申请日', 'varchar', 'st_dt', '0', '1', '0', '0', '0', '0', '0', '0');
+INSERT INTO `cfg_stcolumn` VALUES ('19', 'cpy_y', '最早优先权年', 'int', 'st_dt', '1', '0', '1', '1', '0', '1', '0', '0');
+INSERT INTO `cfg_stcolumn` VALUES ('20', 'cpy', '最早优先权日', 'varchar', 'st_dt', '0', '0', '1', '1', '0', '0', '0', '0');
+INSERT INTO `cfg_stcolumn` VALUES ('21', 'f_pa', '主申请人', 'varchar', 'st_dt', '1', '1', '1', '1', '0', '1', '0', '0');
+INSERT INTO `cfg_stcolumn` VALUES ('22', 'f_in', '主发明人', 'varchar', 'st_dt', '1', '1', '1', '1', '0', '1', '0', '0');
+INSERT INTO `cfg_stcolumn` VALUES ('23', 'f_ipc', '主IPC', 'varchar', 'st_dt', '1', '1', '1', '1', '0', '1', '0', '0');
+INSERT INTO `cfg_stcolumn` VALUES ('24', 'f_cpc', '主CPC', 'varchar', 'st_dt', '1', '1', '1', '1', '0', '1', '0', '0');
+INSERT INTO `cfg_stcolumn` VALUES ('25', 'f_dmc', '主DMC', 'varchar', 'st_dt', '1', '0', '1', '0', '0', '1', '0', '0');
+INSERT INTO `cfg_stcolumn` VALUES ('26', 'des_page_sum', '说明书页数', 'int', 'st_dt', '0', '1', '0', '0', '0', '0', '0', '0');
+INSERT INTO `cfg_stcolumn` VALUES ('27', 'clm_page_sum', '权利要求项数', 'int', 'st_dt', '0', '1', '0', '0', '0', '0', '0', '0');
+INSERT INTO `cfg_stcolumn` VALUES ('28', 'clm_char_sum', '权利要求1字数', 'int', 'st_dt', '0', '1', '0', '0', '0', '1', '0', '0');
+INSERT INTO `cfg_stcolumn` VALUES ('29', 'pic_sum', '附图个数', 'int', 'st_dt', '0', '1', '0', '0', '0', '0', '0', '0');
+INSERT INTO `cfg_stcolumn` VALUES ('30', 'type', '专利类型', 'varchar', 'st_dt', '1', '1', '0', '0', '0', '1', '0', '0');
+INSERT INTO `cfg_stcolumn` VALUES ('31', 'type1', '专利类型(含PCT)', 'varchar', 'st_dt', '1', '1', '0', '0', '0', '1', '0', '0');
+INSERT INTO `cfg_stcolumn` VALUES ('32', 'f_pa_type', '主申请人类型', 'varchar', 'st_dt', '1', '1', '0', '0', '0', '1', '0', '0');
+INSERT INTO `cfg_stcolumn` VALUES ('33', 'ishezuo', '是否合作申请', 'tinyint', 'st_dt', '1', '1', '1', '1', '0', '1', '0', '0');
+INSERT INTO `cfg_stcolumn` VALUES ('34', 'zhou', '洲际', 'varchar', 'st_dt', '1', '1', '1', '1', '0', '1', '0', '0');
+INSERT INTO `cfg_stcolumn` VALUES ('35', 'isguowai', '是否国外来华', 'tinyint', 'st_dt', '1', '1', '0', '0', '0', '1', '0', '0');
+INSERT INTO `cfg_stcolumn` VALUES ('36', 'issanju', '是否三局', 'tinyint', 'st_dt', '1', '0', '1', '0', '0', '1', '0', '0');
+INSERT INTO `cfg_stcolumn` VALUES ('37', 'iswuju', '是否五局', 'tinyint', 'st_dt', '1', '0', '1', '0', '0', '1', '0', '0');
+INSERT INTO `cfg_stcolumn` VALUES ('38', 'cy', '国家', 'varchar', 'st_dt', '1', '1', '1', '1', '0', '1', '0', '0');
+INSERT INTO `cfg_stcolumn` VALUES ('39', 'sheng', '省', 'varchar', 'st_dt', '1', '1', '0', '0', '0', '1', '0', '0');
+INSERT INTO `cfg_stcolumn` VALUES ('40', 'sheng1', '省(计划单列市）', 'varchar', 'st_dt', '1', '1', '0', '0', '0', '1', '0', '0');
+INSERT INTO `cfg_stcolumn` VALUES ('41', 'shi', '市', 'varchar', 'st_dt', '1', '1', '0', '0', '0', '1', '0', '0');
+INSERT INTO `cfg_stcolumn` VALUES ('42', 'quxian', '区县', 'varchar', 'st_dt', '1', '1', '0', '0', '0', '1', '0', '0');
+INSERT INTO `cfg_stcolumn` VALUES ('43', 'quyu', '经济区域', 'varchar', 'st_dt', '1', '1', '0', '0', '0', '1', '0', '0');
+INSERT INTO `cfg_stcolumn` VALUES ('44', 'lg', '最终法律状态', 'varchar', 'st_dt', '1', '1', '0', '0', '0', '1', '0', '0');
+INSERT INTO `cfg_stcolumn` VALUES ('45', 'lg_year', '法律截止年', 'varchar', 'st_dt', '1', '1', '0', '0', '0', '1', '0', '0');
+INSERT INTO `cfg_stcolumn` VALUES ('46', 'pdy_def', '公开年差', 'tinyint', 'st_dt', '0', '1', '1', '1', '0', '1', '0', '0');
+INSERT INTO `cfg_stcolumn` VALUES ('47', 'gdy_def', '授权年差', 'tinyint', 'st_dt', '0', '1', '0', '0', '0', '1', '0', '0');
+INSERT INTO `cfg_stcolumn` VALUES ('48', 'age', '专利年龄', 'tinyint', 'st_dt', '1', '1', '0', '0', '0', '1', '0', '0');
+INSERT INTO `cfg_stcolumn` VALUES ('49', 'isgongzhi', '是否公知技术', 'tinyint', 'st_dt', '1', '1', '0', '0', '0', '1', '0', '0');
+INSERT INTO `cfg_stcolumn` VALUES ('50', 'pa_sum', '申请人数量', 'tinyint', 'st_dt', '0', '1', '1', '1', '0', '1', '0', '0');
+INSERT INTO `cfg_stcolumn` VALUES ('51', 'in_sum', '发明人数量', 'tinyint', 'st_dt', '0', '1', '1', '1', '0', '1', '0', '0');
+INSERT INTO `cfg_stcolumn` VALUES ('52', 'ipc_sum', 'IPC数量', 'tinyint', 'st_dt', '0', '1', '1', '1', '0', '1', '0', '0');
+INSERT INTO `cfg_stcolumn` VALUES ('53', 'cpc_sum', 'CPC数量', 'tinyint', 'st_dt', '0', '0', '1', '1', '0', '1', '0', '0');
+INSERT INTO `cfg_stcolumn` VALUES ('54', 'dmc_sum', 'DMC数量', 'tinyint', 'st_dt', '0', '0', '1', '0', '0', '1', '0', '0');
+INSERT INTO `cfg_stcolumn` VALUES ('55', 'fml_sum', '同族数量', 'int', 'st_dt', '0', '0', '1', '0', '0', '1', '0', '0');
+INSERT INTO `cfg_stcolumn` VALUES ('56', 'cy_sum', '国家数量', 'tinyint', 'st_dt', '0', '0', '1', '0', '0', '1', '0', '0');
+INSERT INTO `cfg_stcolumn` VALUES ('57', 'yz_sum', '引证数量', 'tinyint', 'st_dt', '0', '0', '1', '1', '0', '1', '0', '0');
+INSERT INTO `cfg_stcolumn` VALUES ('58', 'byz_sum', '被引证数量', 'tinyint', 'st_dt', '0', '0', '1', '1', '0', '1', '0', '0');
+INSERT INTO `cfg_stcolumn` VALUES ('59', 'cpy', '申请人代码', 'varchar', 'st_pa', '1', '0', '1', '0', '0', '1', '0', '0');
+INSERT INTO `cfg_stcolumn` VALUES ('60', 'pa', '申请人', 'varchar', 'st_pa', '1', '1', '1', '1', '0', '1', '0', '0');
+INSERT INTO `cfg_stcolumn` VALUES ('61', 'pa_type', '申请人类型', 'varchar', 'st_pa', '1', '1', '0', '0', '0', '1', '0', '0');
+INSERT INTO `cfg_stcolumn` VALUES ('62', 'iv', '发明人', 'varchar', 'st_iv', '1', '1', '1', '1', '0', '0', '0', '0');
+INSERT INTO `cfg_stcolumn` VALUES ('63', 'ipc', 'IPC', 'varchar', 'st_ipc', '1', '1', '1', '1', '0', '0', '0', '0');
+INSERT INTO `cfg_stcolumn` VALUES ('64', 'ipc1', 'IPC部', 'varchar', 'st_ipc', '1', '1', '1', '1', '0', '1', '0', '0');
+INSERT INTO `cfg_stcolumn` VALUES ('65', 'ipc3', 'IPC大类', 'varchar', 'st_ipc', '1', '1', '1', '1', '0', '1', '0', '0');
+INSERT INTO `cfg_stcolumn` VALUES ('66', 'ipc4', 'IPC小类', 'varchar', 'st_ipc', '1', '1', '1', '1', '0', '1', '0', '0');
+INSERT INTO `cfg_stcolumn` VALUES ('67', 'ipc7', 'IPC大组', 'varchar', 'st_ipc', '1', '1', '1', '1', '0', '1', '0', '0');
+INSERT INTO `cfg_stcolumn` VALUES ('68', 'cpc', 'CPC', 'varchar', 'st_cpc', '1', '0', '1', '1', '0', '0', '0', '0');
+INSERT INTO `cfg_stcolumn` VALUES ('69', 'cpc1', 'CPC部', 'varchar', 'st_cpc', '1', '0', '1', '1', '0', '1', '0', '0');
+INSERT INTO `cfg_stcolumn` VALUES ('70', 'cpc3', 'CPC大类', 'varchar', 'st_cpc', '1', '0', '1', '1', '0', '1', '0', '0');
+INSERT INTO `cfg_stcolumn` VALUES ('71', 'cpc4', 'CPC小类', 'varchar', 'st_cpc', '1', '0', '1', '1', '0', '1', '0', '0');
+INSERT INTO `cfg_stcolumn` VALUES ('72', 'cpc7', 'CPC大组', 'varchar', 'st_cpc', '1', '0', '1', '1', '0', '1', '0', '0');
+INSERT INTO `cfg_stcolumn` VALUES ('73', 'dmc', 'DMC', 'varchar', 'st_dmc', '1', '0', '1', '0', '0', '0', '0', '0');
+INSERT INTO `cfg_stcolumn` VALUES ('74', 'dmc1', 'DMC部', 'varchar', 'st_dmc', '1', '0', '1', '0', '0', '1', '0', '0');
+INSERT INTO `cfg_stcolumn` VALUES ('75', 'dmc3', 'DMC大类', 'varchar', 'st_dmc', '1', '0', '1', '0', '0', '1', '0', '0');
+INSERT INTO `cfg_stcolumn` VALUES ('76', 'dmc4', 'DMC小类', 'varchar', 'st_dmc', '1', '0', '1', '0', '0', '1', '0', '0');
+INSERT INTO `cfg_stcolumn` VALUES ('77', 'dmc7', 'DMC大组', 'varchar', 'st_dmc', '1', '0', '1', '0', '0', '1', '0', '0');
+INSERT INTO `cfg_stcolumn` VALUES ('78', 'an', '申请日(WPI)', 'varchar', 'st_an', '0', '0', '1', '0', '0', '0', '0', '0');
+INSERT INTO `cfg_stcolumn` VALUES ('79', 'ad', '申请号(WPI)', 'varchar', 'st_an', '0', '0', '1', '0', '0', '0', '0', '0');
+INSERT INTO `cfg_stcolumn` VALUES ('80', 'ady', '申请年(WPI)', 'int', 'st_an', '1', '0', '1', '0', '0', '1', '0', '0');
+INSERT INTO `cfg_stcolumn` VALUES ('81', 'an_gj', '申请国(WPI)', 'varchar', 'st_an', '1', '0', '1', '0', '0', '1', '0', '0');
+INSERT INTO `cfg_stcolumn` VALUES ('82', 'pn', '公开号(WPI)', 'varchar', 'st_pn', '0', '0', '1', '0', '0', '0', '0', '0');
+INSERT INTO `cfg_stcolumn` VALUES ('83', 'pd', '公开日(WPI)', 'varchar', 'st_pn', '0', '0', '1', '0', '0', '0', '0', '0');
+INSERT INTO `cfg_stcolumn` VALUES ('84', 'pdy', '公开年(WPI)', 'int', 'st_pn', '1', '0', '1', '0', '0', '1', '0', '0');
+INSERT INTO `cfg_stcolumn` VALUES ('85', 'pd_gj', '公开国(WPI)', 'varchar', 'st_pn', '0', '0', '1', '0', '0', '1', '0', '0');
+INSERT INTO `cfg_stcolumn` VALUES ('86', 'an', '优先权号', 'varchar', 'st_pr', '0', '1', '1', '1', '0', '0', '0', '0');
+INSERT INTO `cfg_stcolumn` VALUES ('87', 'ad', '优先权日', 'varchar', 'st_pr', '0', '1', '1', '1', '0', '0', '0', '0');
+INSERT INTO `cfg_stcolumn` VALUES ('88', 'gj', '优先权国', 'varchar', 'st_pr', '1', '1', '1', '1', '0', '0', '0', '0');
+INSERT INTO `cfg_stcolumn` VALUES ('89', 'ct_no', '引证号', 'varchar', 'st_ct', '0', '1', '1', '0', '0', '0', '0', '0');
+INSERT INTO `cfg_stcolumn` VALUES ('90', 'ztid', '专题库ID', 'int', 'show_base', '1', '0', '0', '0', '1', '1', '0', '0');
+INSERT INTO `cfg_stcolumn` VALUES ('91', 'sid', '标识号', 'varchar', 'show_base', '1', '0', '0', '0', '1', '1', '0', '0');
+INSERT INTO `cfg_stcolumn` VALUES ('92', 'an', '申请号', 'varchar', 'show_base', '1', '0', '0', '0', '1', '1', '0', '0');
+INSERT INTO `cfg_stcolumn` VALUES ('93', 'ad', '申请日', 'varchar', 'show_base', '1', '0', '0', '0', '1', '1', '0', '0');
+INSERT INTO `cfg_stcolumn` VALUES ('94', 'pn', '公开号', 'varchar', 'show_base', '1', '0', '0', '0', '1', '1', '0', '0');
+INSERT INTO `cfg_stcolumn` VALUES ('95', 'pd', '公开日', 'varchar', 'show_base', '1', '0', '0', '0', '1', '1', '0', '0');
+INSERT INTO `cfg_stcolumn` VALUES ('96', 'gn', '授权号', 'varchar', 'show_base', '1', '0', '0', '0', '1', '1', '0', '0');
+INSERT INTO `cfg_stcolumn` VALUES ('97', 'gd', '授权日', 'varchar', 'show_base', '1', '0', '0', '0', '1', '1', '0', '0');
+INSERT INTO `cfg_stcolumn` VALUES ('98', 'pcd_in', 'PCT进入中国日', 'varchar', 'show_base', '1', '0', '0', '0', '1', '1', '0', '0');
+INSERT INTO `cfg_stcolumn` VALUES ('99', 'pct_an', 'PCT申请号', 'varchar', 'show_base', '1', '0', '0', '0', '1', '1', '0', '0');
+INSERT INTO `cfg_stcolumn` VALUES ('100', 'pct_ad', 'PCT申请日', 'varchar', 'show_base', '1', '0', '0', '0', '1', '1', '0', '0');
+INSERT INTO `cfg_stcolumn` VALUES ('101', 'pct_pn', 'PCT公开号', 'varchar', 'show_base', '1', '0', '0', '0', '1', '1', '0', '0');
+INSERT INTO `cfg_stcolumn` VALUES ('102', 'pct_gd', 'PCT公开日', 'varchar', 'show_base', '1', '0', '0', '0', '1', '1', '0', '0');
+INSERT INTO `cfg_stcolumn` VALUES ('103', 'm_ad', '母案申请日', 'varchar', 'show_base', '1', '0', '0', '0', '1', '1', '0', '0');
+INSERT INTO `cfg_stcolumn` VALUES ('104', 'cpy', '申请人代码', 'varchar', 'show_base', '1', '0', '0', '0', '1', '1', '0', '0');
+INSERT INTO `cfg_stcolumn` VALUES ('105', 'opd', '最早优先权日', 'varchar', 'show_base', '1', '0', '0', '0', '1', '1', '0', '0');
+INSERT INTO `cfg_stcolumn` VALUES ('106', 'pa', '申请人', 'varchar', 'show_base', '1', '0', '0', '0', '1', '1', '0', '0');
+INSERT INTO `cfg_stcolumn` VALUES ('107', 'iv', '发明人', 'varchar', 'show_base', '1', '0', '0', '0', '1', '1', '0', '0');
+INSERT INTO `cfg_stcolumn` VALUES ('108', 'ipc', 'IPC', 'varchar', 'show_base', '1', '0', '0', '0', '1', '1', '0', '0');
+INSERT INTO `cfg_stcolumn` VALUES ('109', 'cpc', 'CPC', 'varchar', 'show_base', '1', '0', '0', '0', '1', '1', '0', '0');
+INSERT INTO `cfg_stcolumn` VALUES ('110', 'dmc', 'DMC', 'varchar', 'show_base', '1', '0', '0', '0', '1', '1', '0', '0');
+INSERT INTO `cfg_stcolumn` VALUES ('111', 'des_page_sum', '说明书页数', 'varchar', 'show_base', '1', '0', '0', '0', '1', '1', '0', '0');
+INSERT INTO `cfg_stcolumn` VALUES ('112', 'clm_sum', '权利要求项数', 'varchar', 'show_base', '1', '0', '0', '0', '1', '1', '0', '0');
+INSERT INTO `cfg_stcolumn` VALUES ('113', 'pic_sum', '附图个数', 'varchar', 'show_base', '1', '0', '0', '0', '1', '1', '0', '0');
+INSERT INTO `cfg_stcolumn` VALUES ('114', 'sheng', '国省', 'varchar', 'show_base', '1', '0', '0', '0', '1', '1', '0', '0');
+INSERT INTO `cfg_stcolumn` VALUES ('115', 'lg', '法律状态详细', 'varchar', 'show_base', '1', '0', '0', '0', '1', '1', '0', '0');
+INSERT INTO `cfg_stcolumn` VALUES ('116', 'title', '标题', 'varchar', 'show_base', '1', '1', '1', '1', '1', '1', '0', '0');
+INSERT INTO `cfg_stcolumn` VALUES ('117', 'abs', '摘要', 'varchar', 'show_base', '1', '1', '1', '1', '1', '1', '0', '0');
+INSERT INTO `cfg_stcolumn` VALUES ('118', 'addr', '申请人地址', 'varchar', 'show_base', '1', '1', '0', '0', '1', '1', '0', '0');
+INSERT INTO `cfg_stcolumn` VALUES ('119', 'zip', '邮编', 'varchar', 'show_base', '1', '1', '0', '0', '1', '1', '0', '0');
+INSERT INTO `cfg_stcolumn` VALUES ('120', 'EC', 'Ecla', 'varchar', 'show_base', '1', '0', '0', '0', '1', '1', '0', '0');
+INSERT INTO `cfg_stcolumn` VALUES ('121', 'pr', '优先权', 'varchar', 'show_base', '1', '0', '0', '0', '1', '1', '0', '0');
+INSERT INTO `cfg_stcolumn` VALUES ('122', 'dljg', '代理机构', 'varchar', 'show_base', '1', '1', '0', '0', '1', '1', '0', '0');
+INSERT INTO `cfg_stcolumn` VALUES ('123', 'dlr', '代理人', 'varchar', 'show_base', '1', '1', '0', '0', '1', '1', '0', '0');
+INSERT INTO `cfg_stcolumn` VALUES ('124', 'dljg_addr', '代理机构地址', 'varchar', 'show_base', '1', '1', '0', '0', '1', '1', '0', '0');
+INSERT INTO `cfg_stcolumn` VALUES ('125', 'fcfl', '范畴分类', 'varchar', 'show_base', '1', '1', '0', '0', '1', '1', '0', '0');
+INSERT INTO `cfg_stcolumn` VALUES ('126', 'clm', '主权利要求', 'varchar', 'show_base', '1', '1', '0', '0', '1', '1', '0', '0');
+INSERT INTO `cfg_stcolumn` VALUES ('127', 'ds', '德温特分类', 'varchar', 'show_base', '1', '0', '0', '0', '1', '1', '0', '0');
+INSERT INTO `cfg_stcolumn` VALUES ('128', 'famn', '家族ID', 'varchar', 'show_base', '1', '0', '0', '0', '1', '1', '0', '0');
+INSERT INTO `cfg_stcolumn` VALUES ('129', 'ct', '引用文献', 'varchar', 'show_base', '1', '0', '0', '0', '1', '1', '0', '0');
+INSERT INTO `cfg_stcolumn` VALUES ('130', 'ctnp', '被引用文献', 'varchar', 'show_base', '1', '0', '0', '0', '1', '1', '0', '0');
+INSERT INTO `cfg_stcolumn` VALUES ('131', 'fi', 'FI', 'varchar', 'show_base', '1', '0', '0', '0', '1', '1', '0', '0');
+INSERT INTO `cfg_stcolumn` VALUES ('132', 'ft', 'FT', 'varchar', 'show_base', '1', '0', '0', '0', '1', '1', '0', '0');
+INSERT INTO `cfg_stcolumn` VALUES ('134', 'rf', 'rf', 'varchar', 'show_base', '1', '0', '0', '0', '1', '1', '0', '0');
+INSERT INTO `cfg_stcolumn` VALUES ('135', 'rfap', 'rfap', 'varchar', 'show_base', '1', '0', '0', '0', '1', '1', '0', '0');
+INSERT INTO `cfg_stcolumn` VALUES ('136', 'rfnp', 'rfnp', 'varchar', 'show_base', '1', '0', '0', '0', '1', '1', '0', '0');
+
+
+update `chart_items` set item_name='申请人类型分析' where id=15;
+update chart_type set item_name='申请人类型分析' where item_name='申请人所属类型分析';

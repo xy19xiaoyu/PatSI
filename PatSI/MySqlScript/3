@@ -1,0 +1,22 @@
+﻿TRUNCATE TABLE st_ipc;
+TRUNCATE TABLE  st_pa;
+TRUNCATE TABLE  st_pr;
+TRUNCATE TABLE  show_base;
+TRUNCATE TABLE  st_iv;
+truncate TABLE st_pns;
+truncate TABLE st_ans;
+truncate TABLE  st_dc;
+truncate TABLE  st_fml;
+truncate TABLE  st_cpc;
+truncate table st_dt;
+truncate table st_ztlist;
+
+ALTER TABLE `st_dt`
+MODIFY COLUMN `pdy_def`  int(4) NULL DEFAULT NULL AFTER `lg_year`,
+MODIFY COLUMN `gdy_def`  int(4) NULL DEFAULT NULL AFTER `pdy_def`;
+
+ALTER TABLE `st_dt`
+ADD COLUMN `oprc`  varchar(255) NULL AFTER `import_date`;
+
+insert into cfg_country (daima,sheng,sheng1,zhou,gj) values ('TW','台湾','台湾','亚洲','中国');
+

@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<baseFiled>
+  <Filed dbTy="" name="id" nameCn="ID" isShow="0" ReadOnly="1"/>
+  <Filed dbTy="" name="ztid" nameCn="专题库ID" isShow="0" ReadOnly="1"/>
+  <Filed dbTy="" name="sid" nameCn="sid" isShow="1" ReadOnly="1"/>
+  <Filed dbTy="WPI,EPODOC" name="sid" nameCn="入藏号" isShow="1" ReadOnly="0"/>
+  <Filed dbTy="WPI" name="(select GROUP_CONCAT(an ORDER BY	sort ASC SEPARATOR ';') FROM  st_ans where ztid=a1.ztid and sid=a1.sid)" nameCn="申请号" isShow="1" ReadOnly="0"   tbName="-"/>
+  <Filed dbTy="WPI" name="(select GROUP_CONCAT(ad ORDER BY	sort ASC SEPARATOR ';') FROM  st_ans where ztid=a1.ztid and sid=a1.sid)" nameCn="申请日" isShow="1" ReadOnly="0" tbName="-"/>
+  <Filed dbTy="CPRS" name="an" nameCn="申请号" isShow="1" ReadOnly="0"/>
+  <Filed dbTy="CPRS" name="ad" nameCn="申请日" isShow="1" ReadOnly="0"/>
+  <Filed dbTy="EPODOC" name="an" nameCn="申请号" isShow="1" ReadOnly="0"  tbName="st_dt"/>
+  <Filed dbTy="EPODOC" name="ad" nameCn="申请日" isShow="1" ReadOnly="0"  tbName="st_dt"/>
+  <Filed dbTy="WPI,EPODOC" name="an" nameCn="申请号(原始)" isShow="0" ReadOnly="0"  tbName=""/>
+  <Filed dbTy="" name="title" nameCn="标题" isShow="1" ReadOnly="0"/>
+  <Filed dbTy="WPI" name="(select GROUP_CONCAT(pn ORDER BY	sort ASC SEPARATOR ';') FROM  st_pns where ztid=a1.ztid and  sid=a1.sid)" nameCn="公开号" isShow="1" ReadOnly="0" tbName="-"/>
+  <Filed dbTy="WPI" name="(select GROUP_CONCAT(pd ORDER BY	sort ASC SEPARATOR ';') FROM  st_pns where ztid=a1.ztid and  sid=a1.sid)" nameCn="公开日" isShow="1" ReadOnly="0" tbName="-"/>
+  <Filed dbTy="EPODOC" name="pn" nameCn="公开号" isShow="1" ReadOnly="0" tbName="st_dt"/>
+  <Filed dbTy="CPRS" name="pn" nameCn="公开号" isShow="1" ReadOnly="0"/>
+  <Filed dbTy="CPRS,EPODOC" name="pd" nameCn="公开日" isShow="1" ReadOnly="0"/>
+  <Filed dbTy="WPI,EPODOC" name="pn" nameCn="公开号(原始)" isShow="0" ReadOnly="0"  tbName=""/>
+  <Filed dbTy="CPRS" name="gn" nameCn="授权号" isShow="1" ReadOnly="0"/>
+  <Filed dbTy="CPRS" name="gd" nameCn="授权日" isShow="1" ReadOnly="0"/>
+  <Filed dbTy="CPRS" name="pcd_in" nameCn="PCT进入中国日" isShow="0" ReadOnly="0"/>
+  <Filed dbTy="CPRS" name="pct_an" nameCn="PCT申请号" isShow="0" ReadOnly="0"/>
+  <Filed dbTy="CPRS" name="pct_ad" nameCn="PCT申请日" isShow="0" ReadOnly="0"/>
+  <Filed dbTy="CPRS" name="pct_pn" nameCn="PCT公开号" isShow="0" ReadOnly="0"/>
+  <Filed dbTy="CPRS" name="pct_gd" nameCn="PCT公开日" isShow="0" ReadOnly="0"/>
+  <Filed dbTy="CPRS" name="m_ad" nameCn="母案申请日" isShow="0" ReadOnly="0"/>
+  <Filed dbTy="" name="pr" nameCn="优先权" isShow="0" ReadOnly="0"/>
+  <Filed dbTy="WPI" name="opd" nameCn="最早优先权日" isShow="0" ReadOnly="0"/>
+  <Filed dbTy="WPI" name="cpy" nameCn="申请人代码" isShow="1" ReadOnly="0"/>
+  <Filed dbTy="" name="pa" nameCn="申请人" isShow="1" ReadOnly="0"/>
+  <Filed dbTy="" name="iv" nameCn="发明人" isShow="1" ReadOnly="0"/>
+  <Filed dbTy="" name="ipc" nameCn="IPC" isShow="1" ReadOnly="0"/>
+  <Filed dbTy="" name="cpc" nameCn="CPC" isShow="0" ReadOnly="0"/>
+  <Filed dbTy="WPI" name="dc" nameCn="DC" isShow="1" ReadOnly="0"  tbName="-"/>
+  <Filed dbTy="WPI" name="DMC" nameCn="DMC" isShow="0" ReadOnly="0"/>
+  <Filed dbTy="CPRS" name="des_page_sum" nameCn="说明书页数" isShow="0" ReadOnly="0"/>
+  <Filed dbTy="CPRS" name="clm_sum" nameCn="权利要求项数" isShow="0" ReadOnly="0"/>
+  <Filed dbTy="CPRS" name="pic_sum" nameCn="附图个数" isShow="0" ReadOnly="0"/>
+  <Filed dbTy="CPRS" name="sheng" nameCn="省" isShow="1" ReadOnly="0"/>
+  <Filed dbTy="CPRS" name="lg" nameCn="法律状态详细" isShow="0" ReadOnly="0"/>
+  <Filed dbTy="" name="abs" nameCn="摘要" isShow="0" ReadOnly="0"/>
+  <Filed dbTy="CPRS" name="addr" nameCn="申请人地址" isShow="1" ReadOnly="0"/>
+  <Filed dbTy="CPRS" name="zip" nameCn="邮编" isShow="0" ReadOnly="0"/>
+  <Filed dbTy="CPRS" name="dljg" nameCn="代理机构" isShow="0" ReadOnly="0"/>
+  <Filed dbTy="CPRS" name="dlr" nameCn="代理人" isShow="0" ReadOnly="0"/>
+  <Filed dbTy="CPRS" name="CLM" nameCn="主权利要求" isShow="0" ReadOnly="0"/>
+  <Filed dbTy="EPODOC" name="ec" nameCn="EC" isShow="1" ReadOnly="0"/>
+
+  <Filed dbTy="CPRS" name="byz_sum" nameCn="被引证数量" isShow="0" ReadOnly="0" isAutoIndex="1" tbName="st_dt"/>
+  <Filed dbTy="CPRS" name="cls_char_sum" nameCn="权利要求1字数" isShow="0" ReadOnly="0" isAutoIndex="1" tbName="st_dt"/>
+  <Filed dbTy="" name="pdy" nameCn="公开年" isShow="0" ReadOnly="0" isAutoIndex="1" tbName="st_dt"/>
+  <Filed dbTy="" name="pdy_def" nameCn="公开年差" isShow="0" ReadOnly="0" isAutoIndex="1" tbName="st_dt"/>
+  <Filed dbTy="CPRS" name="(case isguowai when '1' then '是' else '否' end)" nameCn="是否国外来华" isShow="0" ReadOnly="0" isAutoIndex="1" tbName="st_dt"/>
+  <Filed dbTy="CPRS" name="(case isgongzhi when '1' then '是' else '否' end)" nameCn="是否公知技术" isShow="0" ReadOnly="0" isAutoIndex="1" tbName="st_dt"/>
+  <Filed dbTy="" name="(case ishezuo when '1' then '是' else '否' end)" nameCn="是否合作申请" isShow="0" ReadOnly="0" isAutoIndex="1" tbName="st_dt"/>
+  <Filed dbTy="" name="gj" nameCn="国家" isShow="1" ReadOnly="0" isAutoIndex="1" tbName="st_dt"/>
+  <Filed dbTy="WPI" name="ap_gjs" nameCn="申请国家" isShow="0" ReadOnly="0" isAutoIndex="1" tbName="st_dt"/>
+  <Filed dbTy="WPI" name="pn_gjs" nameCn="公开国家" isShow="0" ReadOnly="0" isAutoIndex="1" tbName="st_dt"/>
+  <Filed dbTy="CPRS" name="sheng1" nameCn="省(含计划单列市)" isShow="0" ReadOnly="0" isAutoIndex="1" tbName="st_dt"/>
+  <Filed dbTy="CPRS" name="quxian" nameCn="区县" isShow="0" ReadOnly="0" isAutoIndex="1" tbName="st_dt"/>
+  <Filed dbTy="CPRS" name="shi" nameCn="市" isShow="0" ReadOnly="0" isAutoIndex="1" tbName="st_dt"/>
+  <Filed dbTy="CPRS" name="gdy" nameCn="授权年" isShow="0" ReadOnly="0" isAutoIndex="1" tbName="st_dt"/>
+  <Filed dbTy="" name="ady" nameCn="申请年" isShow="0" ReadOnly="0" isAutoIndex="1" tbName="st_dt"/>
+  <Filed dbTy="CPRS" name="gdy_def" nameCn="授权年差" isShow="0" ReadOnly="0" isAutoIndex="1" tbName="st_dt"/>
+  <Filed dbTy="CPRS" name="yz_sum" nameCn="引证数量" isShow="0" ReadOnly="0" isAutoIndex="1" tbName="st_dt"/>
+  <Filed dbTy="" name="f_cpc" nameCn="主CPC" isShow="0" ReadOnly="0" isAutoIndex="1" tbName="st_dt"/>
+  <Filed dbTy="" name="f_in" nameCn="主发明人" isShow="0" ReadOnly="0" isAutoIndex="1" tbName="st_dt"/>
+  <Filed dbTy="" name="f_ipc" nameCn="主IPC" isShow="0" ReadOnly="0" isAutoIndex="1" tbName="st_dt"/>
+  <Filed dbTy="" name="zhou" nameCn="洲际" isShow="0" ReadOnly="0" isAutoIndex="1" tbName="st_dt"/>
+  <Filed dbTy="CPRS" name="type" nameCn="专利类型" isShow="0" ReadOnly="0" isAutoIndex="1" tbName="st_dt"/>
+  <Filed dbTy="CPRS" name="type1" nameCn="专利类型(含PCT)" isShow="0" ReadOnly="0" isAutoIndex="1" tbName="st_dt"/>
+  <Filed dbTy="" name="age" nameCn="专利年龄" isShow="0" ReadOnly="0" isAutoIndex="1" tbName="st_dt"/>
+
+  <Filed dbTy="" name="f_pa" nameCn="主申请人" isShow="0" ReadOnly="0" isAutoIndex="1" tbName="st_dt"/>
+  <Filed dbTy="CPRS" name="f_pa_type" nameCn="主申请人类型" isShow="0" ReadOnly="0" isAutoIndex="1" tbName="st_dt"/>
+  <Filed dbTy="" name="lg" nameCn="最终法律状态" isShow="0" ReadOnly="0" isAutoIndex="1" tbName="st_dt"/>
+  <Filed dbTy="" name="cpc_sum" nameCn="CPC数量" isShow="0" ReadOnly="0" isAutoIndex="1" tbName="st_dt"/>
+  <Filed dbTy="" name="ipc_sum" nameCn="IPC数量" isShow="0" ReadOnly="0" isAutoIndex="1" tbName="st_dt"/>
+  <Filed dbTy="" name="in_sum" nameCn="发明人数量" isShow="0" ReadOnly="0" isAutoIndex="1" tbName="st_dt"/>
+  <Filed dbTy="" name="pa_sum" nameCn="申请人数量" isShow="0" ReadOnly="0" isAutoIndex="1" tbName="st_dt"/>
+  <Filed dbTy="CPRS" name="quyu" nameCn="经济区域" isShow="0" ReadOnly="0" isAutoIndex="1" tbName="st_dt"/>
+  <!--<Filed dbTy="CPRS" name="lg" nameCn="法律截止年" isShow="0" ReadOnly="0" isAutoIndex="1" tbName="st_dt"/>-->
+  <Filed dbTy="WPI,EPODOC" name="opdy" nameCn="最早优先权年" isShow="0" ReadOnly="0" isAutoIndex="1" tbName="st_dt"/>
+  <Filed dbTy="WPI,EPODOC" name="fml_sum" nameCn="同族数量" isShow="0" ReadOnly="0" isAutoIndex="1" tbName="st_dt"/>
+  <Filed dbTy="WPI,EPODOC" name="gj_sum" nameCn="国家数量" isShow="0" ReadOnly="0" isAutoIndex="1" tbName="st_dt"/>
+  <Filed dbTy="WPI,EPODOC" name="(case issanju when '1' then '是' else '否' end)" nameCn="是否三局" isShow="0" ReadOnly="0" isAutoIndex="1" tbName="st_dt"/>
+  <Filed dbTy="WPI,EPODOC" name="(case iswuju when '1' then '是' else '否' end)" nameCn="是否五局" isShow="0" ReadOnly="0" isAutoIndex="1" tbName="st_dt"/>
+  <Filed dbTy="WPI,EPODOC" name="oprc" nameCn="最早优先权国家" isShow="0" ReadOnly="0" isAutoIndex="1" tbName="st_dt"/>
+  <Filed dbTy="WPI,EPODOC" name="f_dmc" nameCn="主DC" isShow="0" ReadOnly="0" isAutoIndex="1" tbName="st_dt"/>
+  <Filed dbTy="WPI,EPODOC" name="dmc_sum" nameCn="DC数量" isShow="0" ReadOnly="0" isAutoIndex="1" tbName="st_dt"/>
+</baseFiled>

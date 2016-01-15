@@ -1,0 +1,309 @@
+﻿
+SET FOREIGN_KEY_CHECKS=0;
+
+-- ----------------------------
+-- Table structure for chart_column
+-- ----------------------------
+DROP TABLE IF EXISTS `chart_column`;
+CREATE TABLE `chart_column` (
+  `id` int(11) NOT NULL,
+  `item_name` varchar(255) DEFAULT NULL,
+  `colname` varchar(255) DEFAULT NULL,
+  `table_name` varchar(255) DEFAULT NULL,
+  `show_name` varchar(255) DEFAULT NULL,
+  `cn` tinyint(1) DEFAULT NULL,
+  `wpi` tinyint(1) DEFAULT NULL,
+  `epodoc` tinyint(1) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=gbk;
+
+-- ----------------------------
+-- Records of chart_column
+-- ----------------------------
+INSERT INTO `chart_column` VALUES ('1', '年代', 'ady', 'st_dt', '申请年', '1', '0', '1');
+INSERT INTO `chart_column` VALUES ('2', '年代', 'pdy', 'st_dt', '公开年', '1', '0', '1');
+INSERT INTO `chart_column` VALUES ('3', '年代', 'gdy', 'st_dt', '授权年', '1', '0', '0');
+INSERT INTO `chart_column` VALUES ('4', '年代', 'opdy', 'st_dt', '最早优先权年', '0', '1', '0');
+INSERT INTO `chart_column` VALUES ('5', '年代', 'ady', 'st_dt', '申请年(族）', '0', '1', '0');
+INSERT INTO `chart_column` VALUES ('6', '年代', 'pdy', 'st_dt', '公开年(族）', '0', '1', '0');
+INSERT INTO `chart_column` VALUES ('7', '年代', 'ady', 'st_ans', '申请年', '0', '1', '0');
+INSERT INTO `chart_column` VALUES ('8', '年代', 'pdy', 'st_pns', '公开年', '0', '1', '0');
+INSERT INTO `chart_column` VALUES ('9', '区域', 'gj', 'st_dt', '国家', '1', '1', '1');
+INSERT INTO `chart_column` VALUES ('10', '区域', 'zhou', 'st_dt', '洲际', '1', '1', '1');
+INSERT INTO `chart_column` VALUES ('11', '区域', 'sheng', 'st_dt', '国省', '1', '0', '0');
+INSERT INTO `chart_column` VALUES ('12', '区域', 'sheng1', 'st_dt', '国省(含计划单列市）', '1', '0', '0');
+INSERT INTO `chart_column` VALUES ('13', '区域', 'shi', 'st_dt', '市', '1', '0', '0');
+INSERT INTO `chart_column` VALUES ('14', '区域', 'quxian', 'st_dt', '区县', '1', '0', '0');
+INSERT INTO `chart_column` VALUES ('15', '区域', 'qy', 'st_qy', '经济区域', '1', '0', '0');
+INSERT INTO `chart_column` VALUES ('16', '申请人', 'pa', 'st_pa', '申请人', '1', '1', '1');
+INSERT INTO `chart_column` VALUES ('17', '申请人', 'f_pa', 'st_dt', '第一申请人', '1', '1', '1');
+INSERT INTO `chart_column` VALUES ('18', '申请人', 'cpy', 'st_pa', '申请人代码', '0', '1', '0');
+INSERT INTO `chart_column` VALUES ('19', '发明人', 'iv', 'st_iv', '发明人', '1', '1', '1');
+INSERT INTO `chart_column` VALUES ('20', '发明人', 'f_in', 'st_dt', '第一发明人', '1', '1', '1');
+INSERT INTO `chart_column` VALUES ('21', '技术分类', 'ipc', 'st_ipc', 'IPC技术分类', '1', '1', '1');
+INSERT INTO `chart_column` VALUES ('22', '技术分类', 'f_ipc', 'st_dt', 'IPC主分类', '1', '1', '1');
+INSERT INTO `chart_column` VALUES ('23', '技术分类', 'ipc1', 'st_ipc', 'IPC部', '1', '1', '1');
+INSERT INTO `chart_column` VALUES ('24', '技术分类', 'ipc3', 'st_ipc', 'IPC大类', '1', '1', '1');
+INSERT INTO `chart_column` VALUES ('25', '技术分类', 'ipc4', 'st_ipc', 'IPC小类', '1', '1', '1');
+INSERT INTO `chart_column` VALUES ('26', '技术分类', 'ipc7', 'st_ipc', 'IPC大组', '1', '1', '1');
+INSERT INTO `chart_column` VALUES ('27', '技术分类', 'f_cpc', 'st_dt', 'CPC主分类', '0', '0', '1');
+INSERT INTO `chart_column` VALUES ('28', '技术分类', 'cpc1', 'st_cpc', 'CPC部', '0', '0', '1');
+INSERT INTO `chart_column` VALUES ('29', '技术分类', 'cpc3', 'st_cpc', 'CPC大类', '0', '0', '1');
+INSERT INTO `chart_column` VALUES ('30', '技术分类', 'cpc4', 'st_cpc', 'CPC小类', '0', '0', '1');
+INSERT INTO `chart_column` VALUES ('31', '技术分类', 'dc', 'st_dc', '德文特分类', '0', '1', '0');
+INSERT INTO `chart_column` VALUES ('32', '技术分类', 'cpc7', 'st_cpc', 'CPC大组', '0', '0', '1');
+INSERT INTO `chart_column` VALUES ('33', '专利类型', 'type', 'st_dt', '专利类型', '1', '0', '0');
+INSERT INTO `chart_column` VALUES ('34', '专利类型', 'type1', 'st_dt', '专利类型(含PCT)', '1', '0', '0');
+INSERT INTO `chart_column` VALUES ('35', '申请人类型', 'pa_type', 'st_pa', '申请人类型', '1', '0', '0');
+INSERT INTO `chart_column` VALUES ('36', '申请人类型', 'f_pa_type', 'st_dt', '第一申请人类型', '1', '0', '0');
+INSERT INTO `chart_column` VALUES ('37', '法律状态', 'lg', 'st_dt', '法律状态', '1', '0', '0');
+INSERT INTO `chart_column` VALUES ('38', '审查周期', 'sczq', 'st_dt', '审查周期(月)', '1', '0', '0');
+INSERT INTO `chart_column` VALUES ('39', '专利存活期', 'age', 'st_dt', '专利存活期（年）', '1', '0', '0');
+INSERT INTO `chart_column` VALUES ('40', '有效专利维持期', 'age', 'st_dt', '有效专利维持期（年）', '1', '0', '0');
+INSERT INTO `chart_column` VALUES ('41', '国家', 'gj', 'st_dt', '国家', '1', '1', '1');
+
+-- ----------------------------
+-- Table structure for chart_items
+-- ----------------------------
+DROP TABLE IF EXISTS `chart_items`;
+CREATE TABLE `chart_items` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `chart_group` varchar(255) DEFAULT NULL,
+  `item_name` varchar(255) DEFAULT NULL,
+  `item_desc` varchar(255) DEFAULT NULL,
+  `cn` tinyint(1) DEFAULT NULL,
+  `wpi` tinyint(1) DEFAULT NULL,
+  `epodoc` tinyint(1) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=70 DEFAULT CHARSET=gbk;
+
+-- ----------------------------
+-- Records of chart_items
+-- ----------------------------
+INSERT INTO `chart_items` VALUES ('1', '趋势分析', '专利趋势分析', '', '1', '1', '1');
+INSERT INTO `chart_items` VALUES ('2', '趋势分析', '技术生命周期分析', '', '1', '1', '1');
+INSERT INTO `chart_items` VALUES ('3', '趋势分析', '发明人增速趋势分析', '', '1', '1', '1');
+INSERT INTO `chart_items` VALUES ('4', '趋势分析', '专利类型分布趋势分析', '', '1', '0', '0');
+INSERT INTO `chart_items` VALUES ('5', '趋势分析', '趋势自定义分析', '', '1', '1', '1');
+INSERT INTO `chart_items` VALUES ('6', '区域分析', '区域专利申请比重分析', '', '1', '1', '1');
+INSERT INTO `chart_items` VALUES ('7', '区域分析', '区域专利申请趋势分析', '', '1', '1', '1');
+INSERT INTO `chart_items` VALUES ('8', '区域分析', '区域专利申请人分析', '', '1', '1', '1');
+INSERT INTO `chart_items` VALUES ('9', '区域分析', '区域专利发明人分析', '', '1', '1', '1');
+INSERT INTO `chart_items` VALUES ('10', '区域分析', '区域专利技术构成分析', '', '1', '1', '1');
+INSERT INTO `chart_items` VALUES ('11', '区域分析', '区域首次专利申请分析', '', '1', '1', '1');
+INSERT INTO `chart_items` VALUES ('12', '区域分析', '区域专利动向分析', '', '0', '0', '0');
+INSERT INTO `chart_items` VALUES ('13', '区域分析', '区域自定义分析', '', '1', '1', '1');
+INSERT INTO `chart_items` VALUES ('14', '主体分析', '申请人专利排名分析', '', '1', '1', '1');
+INSERT INTO `chart_items` VALUES ('15', '主体分析', '申请人类型分析', '', '1', '0', '0');
+INSERT INTO `chart_items` VALUES ('16', '主体分析', '申请人趋势分析', '', '1', '1', '1');
+INSERT INTO `chart_items` VALUES ('17', '主体分析', '申请人首次专利申请分析', '', '1', '1', '1');
+INSERT INTO `chart_items` VALUES ('18', '主体分析', '申请人专利类型分析', '', '1', '0', '0');
+INSERT INTO `chart_items` VALUES ('19', '主体分析', '申请人专利技术构成分析', '', '1', '1', '1');
+INSERT INTO `chart_items` VALUES ('20', '主体分析', '申请人研发阵容分析', '', '1', '1', '1');
+INSERT INTO `chart_items` VALUES ('21', '主体分析', '申请人专利布局动向分析', '', '1', '1', '1');
+INSERT INTO `chart_items` VALUES ('22', '主体分析', '申请人专利合作分析', '', '1', '1', '1');
+INSERT INTO `chart_items` VALUES ('23', '主体分析', '发明人专利排名分析', '', '1', '1', '1');
+INSERT INTO `chart_items` VALUES ('24', '主体分析', '发明人专利技术构成分析', '', '1', '1', '1');
+INSERT INTO `chart_items` VALUES ('25', '主体分析', '主体自定义分析', '', '1', '1', '1');
+INSERT INTO `chart_items` VALUES ('26', '技术分析', '专利技术构成分析', '', '1', '1', '1');
+INSERT INTO `chart_items` VALUES ('27', '技术分析', '专利技术趋势分析', '', '1', '1', '1');
+INSERT INTO `chart_items` VALUES ('28', '技术分析', '专利技术区域分析', '', '1', '1', '1');
+INSERT INTO `chart_items` VALUES ('29', '技术分析', '专利技术申请人分析', '', '1', '1', '1');
+INSERT INTO `chart_items` VALUES ('30', '技术分析', '技术自定义分析', '', '1', '1', '1');
+INSERT INTO `chart_items` VALUES ('31', '法律状态分析', '专利法律状态分析', '', '1', '0', '0');
+INSERT INTO `chart_items` VALUES ('32', '法律状态分析', '专利存活期分析', '', '1', '0', '0');
+INSERT INTO `chart_items` VALUES ('33', '法律状态分析', '有效专利维持期分析', '', '1', '0', '0');
+INSERT INTO `chart_items` VALUES ('34', '法律状态分析', '申请人法律状态分析', '', '1', '0', '0');
+INSERT INTO `chart_items` VALUES ('35', '法律状态分析', '区域法律状态分析', '', '1', '0', '0');
+INSERT INTO `chart_items` VALUES ('36', '法律状态分析', '技术领域法律状态分析', '', '1', '0', '0');
+INSERT INTO `chart_items` VALUES ('37', '法律状态分析', '公知技术统计分析', '', '1', '0', '0');
+INSERT INTO `chart_items` VALUES ('38', '法律状态分析', '专利审查周期分析', '', '1', '0', '0');
+INSERT INTO `chart_items` VALUES ('39', '法律状态分析', '法律状态自定义分析', '', '0', '0', '0');
+INSERT INTO `chart_items` VALUES ('40', '中国市场专利分析', '中国本土专利趋势', '', '0', '1', '1');
+INSERT INTO `chart_items` VALUES ('41', '中国市场专利分析', '中美市场专利趋势', '', '0', '1', '1');
+INSERT INTO `chart_items` VALUES ('42', '中国市场专利分析', '中欧市场专利趋势', '', '0', '1', '1');
+INSERT INTO `chart_items` VALUES ('43', '中国市场专利分析', '中国市场重点技术排行榜', '', '0', '1', '1');
+INSERT INTO `chart_items` VALUES ('44', '中国市场专利分析', '中国市场专利申请人排行榜', '', '0', '1', '1');
+INSERT INTO `chart_items` VALUES ('45', '中国市场专利分析', '中国市场布局国家排行榜', '', '0', '1', '1');
+INSERT INTO `chart_items` VALUES ('46', '美国市场专利分析', '美国本土专利趋势', '', '0', '1', '1');
+INSERT INTO `chart_items` VALUES ('47', '美国市场专利分析', '美欧市场专利趋势', '', '0', '1', '1');
+INSERT INTO `chart_items` VALUES ('48', '美国市场专利分析', '美国市场重点技术排行榜', '', '0', '1', '1');
+INSERT INTO `chart_items` VALUES ('49', '美国市场专利分析', '美国市场专利申请人排行榜', '', '0', '1', '1');
+INSERT INTO `chart_items` VALUES ('50', '美国市场专利分析', '美国市场布局国家排行榜', '', '0', '1', '1');
+INSERT INTO `chart_items` VALUES ('51', '欧洲市场专利分析', '欧洲本土专利趋势', '', '0', '1', '1');
+INSERT INTO `chart_items` VALUES ('52', '欧洲市场专利分析', '德国市场专利趋势', '', '0', '1', '1');
+INSERT INTO `chart_items` VALUES ('53', '欧洲市场专利分析', '欧洲市场重点技术排行榜', '', '0', '1', '1');
+INSERT INTO `chart_items` VALUES ('54', '欧洲市场专利分析', '欧洲市场专利申请人排行榜', '', '0', '1', '1');
+INSERT INTO `chart_items` VALUES ('55', '欧洲市场专利分析', '欧洲市场布局国家排行榜', '', '0', '1', '1');
+INSERT INTO `chart_items` VALUES ('56', '国内市场专利预警分析', '国内专利储备不足预警', '', '1', '0', '0');
+INSERT INTO `chart_items` VALUES ('57', '国内市场专利预警分析', '国内专利数量泡沫预警', '', '1', '0', '0');
+INSERT INTO `chart_items` VALUES ('58', '国内市场专利预警分析', '国内专利创新增速预警', '', '1', '0', '0');
+INSERT INTO `chart_items` VALUES ('59', '国内市场专利预警分析', '国内领军者专利创新力预警', '', '1', '0', '0');
+INSERT INTO `chart_items` VALUES ('60', '国内市场专利预警分析', '国内专利组合集中度预警', '', '1', '0', '0');
+INSERT INTO `chart_items` VALUES ('61', '国内市场专利预警分析', '国内专利技术差距预警', '', '1', '0', '0');
+INSERT INTO `chart_items` VALUES ('62', '国内市场专利预警分析', '国外重点国家布局预警', '', '1', '0', '0');
+INSERT INTO `chart_items` VALUES ('63', '海外市场专利预警分析', '美国市场专利壁垒预警', '', '0', '1', '1');
+INSERT INTO `chart_items` VALUES ('64', '海外市场专利预警分析', '欧洲市场专利壁垒预警', '', '0', '1', '1');
+INSERT INTO `chart_items` VALUES ('65', '海外市场专利预警分析', '日本市场专利壁垒预警', '', '0', '1', '1');
+
+
+-- ----------------------------
+-- Table structure for chart_group
+-- ----------------------------
+DROP TABLE IF EXISTS `chart_group`;
+CREATE TABLE `chart_group` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `chart_group` varchar(255) DEFAULT NULL,
+  `cn` tinyint(1) DEFAULT NULL,
+  `wpi` tinyint(1) DEFAULT NULL,
+  `epodoc` tinyint(1) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=gbk;
+
+-- ----------------------------
+-- Records of chart_group
+-- ----------------------------
+INSERT INTO `chart_group` VALUES ('1', '趋势分析', '1', '1', '1');
+INSERT INTO `chart_group` VALUES ('2', '区域分析', '1', '1', '1');
+INSERT INTO `chart_group` VALUES ('3', '主体分析', '1', '1', '1');
+INSERT INTO `chart_group` VALUES ('4', '技术分析', '1', '1', '1');
+INSERT INTO `chart_group` VALUES ('5', '法律状态分析', '1', '0', '0');
+INSERT INTO `chart_group` VALUES ('6', '中国市场专利分析', '0', '1', '1');
+INSERT INTO `chart_group` VALUES ('7', '美国市场专利分析', '0', '1', '1');
+INSERT INTO `chart_group` VALUES ('8', '欧洲市场专利分析', '0', '1', '1');
+INSERT INTO `chart_group` VALUES ('9', '国内市场专利预警分析', '1', '0', '0');
+INSERT INTO `chart_group` VALUES ('10', '海外市场专利预警分析', '0', '1', '1');
+INSERT INTO `chart_group` VALUES ('11', '自定义分析', '1', '1', '1');
+
+
+-- ----------------------------
+-- Table structure for chart_type
+-- ----------------------------
+DROP TABLE IF EXISTS `chart_type`;
+CREATE TABLE `chart_type` (
+  `id` int(11) NOT NULL,
+  `item_name` varchar(255) DEFAULT NULL,
+  `char_type` varchar(255) DEFAULT NULL,
+  `show_name` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=gbk;
+
+-- ----------------------------
+-- Records of chart_type
+-- ----------------------------
+INSERT INTO `chart_type` VALUES ('1', '专利趋势分析', 'Line', '直线图');
+INSERT INTO `chart_type` VALUES ('2', '专利趋势分析', 'StepLine', '样条图');
+INSERT INTO `chart_type` VALUES ('3', '技术生命周期分析', 'Line', '直线图');
+INSERT INTO `chart_type` VALUES ('4', '技术生命周期分析', 'StepLine', '样条图');
+INSERT INTO `chart_type` VALUES ('5', '发明人增速趋势分析', 'Line', '直线图');
+INSERT INTO `chart_type` VALUES ('6', '发明人增速趋势分析', 'StepLine', '样条图');
+INSERT INTO `chart_type` VALUES ('7', '专利类型分布趋势分析', 'Line', '直线图');
+INSERT INTO `chart_type` VALUES ('8', '专利类型分布趋势分析', 'StepLine', '样条图');
+INSERT INTO `chart_type` VALUES ('9', '区域专利申请比重分析', 'Pie', '饼图');
+INSERT INTO `chart_type` VALUES ('10', '区域专利申请比重分析', 'Column', '柱形图');
+INSERT INTO `chart_type` VALUES ('11', '区域专利申请比重分析', 'Doughnut', '圆环图');
+INSERT INTO `chart_type` VALUES ('12', '区域专利申请趋势分析', 'Line', '直线图');
+INSERT INTO `chart_type` VALUES ('13', '区域专利申请趋势分析', 'StepLine', '样条图');
+INSERT INTO `chart_type` VALUES ('14', '区域专利申请人分析', 'Column', '柱形图');
+INSERT INTO `chart_type` VALUES ('15', '区域专利申请人分析', 'StackedColumn', '堆积柱形图');
+INSERT INTO `chart_type` VALUES ('16', '区域专利发明人分析', 'Column', '柱形图');
+INSERT INTO `chart_type` VALUES ('17', '区域专利发明人分析', 'StackedColumn', '堆积柱形图');
+INSERT INTO `chart_type` VALUES ('18', '区域专利技术构成分析', 'Column', '柱形图');
+INSERT INTO `chart_type` VALUES ('19', '区域专利技术构成分析', 'StackedColumn', '堆积柱形图');
+INSERT INTO `chart_type` VALUES ('20', '区域专利技术构成分析', 'Column', '柱形图');
+INSERT INTO `chart_type` VALUES ('21', '区域专利技术构成分析', 'StackedColumn', '堆积柱形图');
+INSERT INTO `chart_type` VALUES ('22', '区域首次专利申请分析', 'Point', '点图');
+INSERT INTO `chart_type` VALUES ('23', '区域专利动向分', 'Column', '柱形图');
+INSERT INTO `chart_type` VALUES ('24', '区域专利动向分', 'StackedColumn', '堆积柱形图');
+INSERT INTO `chart_type` VALUES ('25', '申请人专利排名分析', 'Pie', '饼图');
+INSERT INTO `chart_type` VALUES ('26', '申请人专利排名分析', 'Column', '柱形图');
+INSERT INTO `chart_type` VALUES ('27', '申请人专利排名分析', 'Doughnut', '圆环图');
+INSERT INTO `chart_type` VALUES ('28', '申请人类型分析', 'Column', '柱形图');
+INSERT INTO `chart_type` VALUES ('29', '申请人类型分析', 'StackedColumn', '堆积柱形图');
+INSERT INTO `chart_type` VALUES ('30', '申请人趋势分析', 'Line', '直线图');
+INSERT INTO `chart_type` VALUES ('31', '申请人趋势分析', 'StepLine', '样条图');
+INSERT INTO `chart_type` VALUES ('32', '申请人首次专利申请分析', 'Point', '点图');
+INSERT INTO `chart_type` VALUES ('33', '申请人专利类型分析', 'Column', '柱形图');
+INSERT INTO `chart_type` VALUES ('34', '申请人专利类型分析', 'StackedColumn', '堆积柱形图');
+INSERT INTO `chart_type` VALUES ('35', '申请人专利技术构成分析', 'Column', '柱形图');
+INSERT INTO `chart_type` VALUES ('36', '申请人专利技术构成分析', 'StackedColumn', '堆积柱形图');
+INSERT INTO `chart_type` VALUES ('37', '申请人专利布局动向分析', 'Column', '柱形图');
+INSERT INTO `chart_type` VALUES ('38', '申请人专利布局动向分析', 'StackedColumn', '堆积柱形图');
+INSERT INTO `chart_type` VALUES ('39', '发明人专利排名分析', 'Pie', '饼图');
+INSERT INTO `chart_type` VALUES ('40', '发明人专利排名分析', 'Column', '柱形图');
+INSERT INTO `chart_type` VALUES ('41', '发明人专利排名分析', 'Doughnut', '圆环图');
+INSERT INTO `chart_type` VALUES ('42', '发明人专利技术构成分析', 'Column', '柱形图');
+INSERT INTO `chart_type` VALUES ('43', '发明人专利技术构成分析', 'StackedColumn', '堆积柱形图');
+INSERT INTO `chart_type` VALUES ('44', '专利技术构成分析', 'Pie', '饼图');
+INSERT INTO `chart_type` VALUES ('45', '专利技术构成分析', 'Column', '柱形图');
+INSERT INTO `chart_type` VALUES ('46', '专利技术构成分析', 'Doughnut', '圆环图');
+INSERT INTO `chart_type` VALUES ('47', '专利技术趋势分析', 'Line', '直线图');
+INSERT INTO `chart_type` VALUES ('48', '专利技术趋势分析', 'StepLine', '样条图');
+INSERT INTO `chart_type` VALUES ('49', '专利技术区域分析', 'Column', '柱形图');
+INSERT INTO `chart_type` VALUES ('50', '专利技术区域分析', 'StackedColumn', '堆积柱形图');
+INSERT INTO `chart_type` VALUES ('51', '专利技术申请人分析', 'Column', '柱形图');
+INSERT INTO `chart_type` VALUES ('52', '专利技术申请人分析', 'StackedColumn', '堆积柱形图');
+INSERT INTO `chart_type` VALUES ('53', '专利法律状态分析', 'Pie', '饼图');
+INSERT INTO `chart_type` VALUES ('54', '专利法律状态分析', 'Column', '柱形图');
+INSERT INTO `chart_type` VALUES ('55', '专利法律状态分析', 'Doughnut', '圆环图');
+INSERT INTO `chart_type` VALUES ('56', '专利存活期分析', 'Pie', '饼图');
+INSERT INTO `chart_type` VALUES ('57', '专利存活期分析', 'Column', '柱形图');
+INSERT INTO `chart_type` VALUES ('58', '专利存活期分析', 'Doughnut', '圆环图');
+INSERT INTO `chart_type` VALUES ('59', '有效专利维持期分析', 'Pie', '饼图');
+INSERT INTO `chart_type` VALUES ('60', '有效专利维持期分析', 'Column', '柱形图');
+INSERT INTO `chart_type` VALUES ('61', '有效专利维持期分析', 'Doughnut', '圆环图');
+INSERT INTO `chart_type` VALUES ('62', '申请人法律状态分析', 'Column', '柱形图');
+INSERT INTO `chart_type` VALUES ('63', '申请人法律状态分析', 'StackedColumn', '堆积柱形图');
+INSERT INTO `chart_type` VALUES ('64', '区域法律状态分析', 'Column', '柱形图');
+INSERT INTO `chart_type` VALUES ('65', '区域法律状态分析', 'StackedColumn', '堆积柱形图');
+INSERT INTO `chart_type` VALUES ('66', '技术领域法律状态分析', 'Column', '柱形图');
+INSERT INTO `chart_type` VALUES ('67', '技术领域法律状态分析', 'StackedColumn', '堆积柱形图');
+INSERT INTO `chart_type` VALUES ('68', '公知技术统计分析', 'Pie', '饼图');
+INSERT INTO `chart_type` VALUES ('69', '公知技术统计分析', 'Column', '柱形图');
+INSERT INTO `chart_type` VALUES ('70', '公知技术统计分析', 'Doughnut', '圆环图');
+INSERT INTO `chart_type` VALUES ('71', '专利审查周期分析', 'Pie', '饼图');
+INSERT INTO `chart_type` VALUES ('72', '专利审查周期分析', 'Column', '柱形图');
+INSERT INTO `chart_type` VALUES ('73', '专利审查周期分析', 'Doughnut', '圆环图');
+INSERT INTO `chart_type` VALUES ('74', '中国本土专利趋势', 'Line', '直线图');
+INSERT INTO `chart_type` VALUES ('75', '中国本土专利趋势', 'StepLine', '样条图');
+INSERT INTO `chart_type` VALUES ('76', '中美市场专利趋势', 'Line', '直线图');
+INSERT INTO `chart_type` VALUES ('77', '中美市场专利趋势', 'StepLine', '样条图');
+INSERT INTO `chart_type` VALUES ('78', '中欧市场专利趋势', 'Line', '直线图');
+INSERT INTO `chart_type` VALUES ('79', '中欧市场专利趋势', 'StepLine', '样条图');
+INSERT INTO `chart_type` VALUES ('80', '中国市场重点技术排行榜', 'Pie', '饼图');
+INSERT INTO `chart_type` VALUES ('81', '中国市场重点技术排行榜', 'Column', '柱形图');
+INSERT INTO `chart_type` VALUES ('82', '中国市场重点技术排行榜', 'Doughnut', '圆环图');
+INSERT INTO `chart_type` VALUES ('83', '中国市场专利申请人排行榜', 'Pie', '饼图');
+INSERT INTO `chart_type` VALUES ('84', '中国市场专利申请人排行榜', 'Column', '柱形图');
+INSERT INTO `chart_type` VALUES ('85', '中国市场专利申请人排行榜', 'Doughnut', '圆环图');
+INSERT INTO `chart_type` VALUES ('86', '中国市场布局国家排行榜', 'Pie', '饼图');
+INSERT INTO `chart_type` VALUES ('87', '中国市场布局国家排行榜', 'Column', '柱形图');
+INSERT INTO `chart_type` VALUES ('88', '中国市场布局国家排行榜', 'Doughnut', '圆环图');
+INSERT INTO `chart_type` VALUES ('89', '美国本土专利趋势', 'Line', '直线图');
+INSERT INTO `chart_type` VALUES ('90', '美国本土专利趋势', 'StepLine', '样条图');
+INSERT INTO `chart_type` VALUES ('91', '美欧市场专利趋势', 'Line', '直线图');
+INSERT INTO `chart_type` VALUES ('92', '美欧市场专利趋势', 'StepLine', '样条图');
+INSERT INTO `chart_type` VALUES ('93', '美国市场重点技术排行榜', 'Pie', '饼图');
+INSERT INTO `chart_type` VALUES ('94', '美国市场重点技术排行榜', 'Column', '柱形图');
+INSERT INTO `chart_type` VALUES ('95', '美国市场重点技术排行榜', 'Doughnut', '圆环图');
+INSERT INTO `chart_type` VALUES ('96', '美国市场专利申请人排行榜', 'Pie', '饼图');
+INSERT INTO `chart_type` VALUES ('97', '美国市场专利申请人排行榜', 'Column', '柱形图');
+INSERT INTO `chart_type` VALUES ('98', '美国市场专利申请人排行榜', 'Doughnut', '圆环图');
+INSERT INTO `chart_type` VALUES ('99', '美国市场布局国家排行榜', 'Pie', '饼图');
+INSERT INTO `chart_type` VALUES ('100', '美国市场布局国家排行榜', 'Column', '柱形图');
+INSERT INTO `chart_type` VALUES ('101', '美国市场布局国家排行榜', 'Doughnut', '圆环图');
+INSERT INTO `chart_type` VALUES ('102', '欧洲本土专利趋势', 'Line', '直线图');
+INSERT INTO `chart_type` VALUES ('103', '欧洲本土专利趋势', 'StepLine', '样条图');
+INSERT INTO `chart_type` VALUES ('104', '德国市场专利趋势', 'Line', '直线图');
+INSERT INTO `chart_type` VALUES ('105', '德国市场专利趋势', 'StepLine', '样条图');
+INSERT INTO `chart_type` VALUES ('106', '欧洲市场重点技术排行榜', 'Pie', '饼图');
+INSERT INTO `chart_type` VALUES ('107', '欧洲市场重点技术排行榜', 'Column', '柱形图');
+INSERT INTO `chart_type` VALUES ('108', '欧洲市场重点技术排行榜', 'Doughnut', '圆环图');
+INSERT INTO `chart_type` VALUES ('109', '欧洲市场专利申请人排行榜', 'Pie', '饼图');
+INSERT INTO `chart_type` VALUES ('110', '欧洲市场专利申请人排行榜', 'Column', '柱形图');
+INSERT INTO `chart_type` VALUES ('111', '欧洲市场专利申请人排行榜', 'Doughnut', '圆环图');
+INSERT INTO `chart_type` VALUES ('112', '欧洲市场布局国家排行榜', 'Pie', '饼图');
+INSERT INTO `chart_type` VALUES ('113', '欧洲市场布局国家排行榜', 'Column', '柱形图');
+INSERT INTO `chart_type` VALUES ('114', '欧洲市场布局国家排行榜', 'Doughnut', '圆环图');
+INSERT INTO `chart_type` VALUES ('115', '国内专利技术差距预警', 'Column', '柱形图');
+INSERT INTO `chart_type` VALUES ('116', '国外重点国家布局预警', 'Column', '柱形图');

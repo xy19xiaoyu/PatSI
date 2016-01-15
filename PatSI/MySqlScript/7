@@ -1,0 +1,16 @@
+﻿ALTER TABLE `st_dt`
+ADD COLUMN `ap_gjs`  varchar(255) NULL AFTER `oprc`,
+ADD COLUMN `pn_gjs`  varchar(255) NULL AFTER `ap_gjs`;
+
+delete from `chart_type` where id=18;
+delete from `chart_type` where id=19;
+
+delete from `cfg_stcolumn` where id=73;
+delete from `cfg_stcolumn` where id=74;
+delete from `cfg_stcolumn` where id=75;
+delete from `cfg_stcolumn` where id=76;
+delete from `cfg_stcolumn` where id=77;
+
+update cfg_stcolumn set showname='DC数量'  where id=54;
+update cfg_stcolumn set showname='主DC' where id=25;
+insert cfg_stcolumn values(137,'dc','DC','varchar','show_base',1,0,1,0,1,1,0,0);

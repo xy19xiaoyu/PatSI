@@ -1,0 +1,1 @@
+﻿update cfg_stcolumn set col_name='gj' where id=38

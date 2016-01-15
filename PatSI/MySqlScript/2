@@ -1,0 +1,76 @@
+/*
+Navicat MySQL Data Transfer
+
+Source Server         : fz
+Source Server Version : 50173
+Source Host           : localhost:3306
+Source Database       : ztst
+
+Target Server Type    : MYSQL
+Target Server Version : 50173
+File Encoding         : 65001
+
+Date: 2015-05-24 10:13:48
+*/
+
+SET FOREIGN_KEY_CHECKS=0;
+
+-- ----------------------------
+-- Table structure for chart_column
+-- ----------------------------
+DROP TABLE IF EXISTS `chart_column`;
+CREATE TABLE `chart_column` (
+  `id` int(11) NOT NULL,
+  `item_name` varchar(255) DEFAULT NULL,
+  `colname` varchar(255) DEFAULT NULL,
+  `table_name` varchar(255) DEFAULT NULL,
+  `show_name` varchar(255) DEFAULT NULL,
+  `cn` tinyint(1) DEFAULT NULL,
+  `wpi` tinyint(1) DEFAULT NULL,
+  `epodoc` tinyint(1) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=gbk;
+
+-- ----------------------------
+-- Records of chart_column
+-- ----------------------------
+INSERT INTO `chart_column` VALUES ('1', '年代', 'ady', 'st_dt', '申请年', '1', '0', '1');
+INSERT INTO `chart_column` VALUES ('2', '年代', 'pdy', 'st_dt', '公开年', '1', '0', '1');
+INSERT INTO `chart_column` VALUES ('3', '年代', 'gdy', 'st_dt', '授权年', '1', '0', '0');
+INSERT INTO `chart_column` VALUES ('4', '年代', 'opdy', 'st_dt', '最早优先权年', '0', '1', '0');
+INSERT INTO `chart_column` VALUES ('5', '年代', 'ady', 'st_dt', '申请年(族）', '0', '1', '0');
+INSERT INTO `chart_column` VALUES ('6', '年代', 'pdy', 'st_dt', '公开年(族）', '0', '1', '0');
+INSERT INTO `chart_column` VALUES ('7', '年代', 'ady', 'st_ans', '申请年', '0', '1', '0');
+INSERT INTO `chart_column` VALUES ('8', '年代', 'pdy', 'st_pns', '公开年', '0', '1', '0');
+INSERT INTO `chart_column` VALUES ('9', '区域', 'gj', 'st_dt', '国家', '1', '1', '1');
+INSERT INTO `chart_column` VALUES ('10', '区域', 'zhou', 'st_dt', '洲际', '1', '1', '1');
+INSERT INTO `chart_column` VALUES ('11', '区域', 'sheng', 'st_dt', '国省', '1', '0', '0');
+INSERT INTO `chart_column` VALUES ('12', '区域', 'sheng1', 'st_dt', '国省(含计划单列市）', '1', '0', '0');
+INSERT INTO `chart_column` VALUES ('13', '区域', 'shi', 'st_dt', '市', '1', '0', '0');
+INSERT INTO `chart_column` VALUES ('14', '区域', 'quxian', 'st_dt', '区县', '1', '0', '0');
+INSERT INTO `chart_column` VALUES ('15', '区域', 'qy', 'st_qy', '经济区域', '1', '0', '0');
+INSERT INTO `chart_column` VALUES ('16', '申请人', 'pa', 'st_pa', '申请人', '1', '1', '1');
+INSERT INTO `chart_column` VALUES ('17', '申请人', 'f_pa', 'st_dt', '第一申请人', '1', '1', '1');
+INSERT INTO `chart_column` VALUES ('18', '申请人', 'cpy', 'st_pa', '申请人代码', '0', '1', '0');
+INSERT INTO `chart_column` VALUES ('19', '发明人', 'iv', 'st_iv', '发明人', '1', '1', '1');
+INSERT INTO `chart_column` VALUES ('20', '发明人', 'f_in', 'st_dt', '第一发明人', '1', '1', '1');
+INSERT INTO `chart_column` VALUES ('21', '技术分类', 'ipc', 'st_ipc', 'IPC技术分类', '1', '1', '1');
+INSERT INTO `chart_column` VALUES ('22', '技术分类', 'f_ipc', 'st_dt', 'IPC主分类', '1', '1', '1');
+INSERT INTO `chart_column` VALUES ('23', '技术分类', 'ipc1', 'st_ipc', 'IPC部', '1', '1', '1');
+INSERT INTO `chart_column` VALUES ('24', '技术分类', 'ipc3', 'st_ipc', 'IPC大类', '1', '1', '1');
+INSERT INTO `chart_column` VALUES ('25', '技术分类', 'ipc4', 'st_ipc', 'IPC小类', '1', '1', '1');
+INSERT INTO `chart_column` VALUES ('26', '技术分类', 'ipc7', 'st_ipc', 'IPC大组', '1', '1', '1');
+INSERT INTO `chart_column` VALUES ('27', '技术分类', 'f_cpc', 'st_dt', 'CPC主分类', '0', '0', '1');
+INSERT INTO `chart_column` VALUES ('28', '技术分类', 'cpc1', 'st_cpc', 'CPC部', '0', '0', '1');
+INSERT INTO `chart_column` VALUES ('29', '技术分类', 'cpc3', 'st_cpc', 'CPC大类', '0', '0', '1');
+INSERT INTO `chart_column` VALUES ('30', '技术分类', 'cpc4', 'st_cpc', 'CPC小类', '0', '0', '1');
+INSERT INTO `chart_column` VALUES ('31', '技术分类', 'dc', 'st_dc', '德文特分类', '0', '1', '0');
+INSERT INTO `chart_column` VALUES ('32', '技术分类', 'cpc7', 'st_cpc', 'CPC大组', '0', '0', '1');
+INSERT INTO `chart_column` VALUES ('33', '专利类型', 'type', 'st_dt', '专利类型', '1', '0', '0');
+INSERT INTO `chart_column` VALUES ('34', '专利类型', 'type1', 'st_dt', '专利类型(含PCT)', '1', '0', '0');
+INSERT INTO `chart_column` VALUES ('35', '申请人类型', 'pa_type', 'st_pa', '申请人类型', '1', '0', '0');
+INSERT INTO `chart_column` VALUES ('36', '申请人类型', 'f_pa_type', 'st_dt', '第一申请人类型', '1', '0', '0');
+INSERT INTO `chart_column` VALUES ('37', '法律状态', 'lg', 'st_dt', '法律状态', '1', '0', '0');
+INSERT INTO `chart_column` VALUES ('38', '审查周期', 'sczq', 'st_dt', '审查周期(月)', '1', '0', '0');
+INSERT INTO `chart_column` VALUES ('39', '专利存活期', 'age', 'st_dt', '专利存活期（年）', '1', '0', '0');
+INSERT INTO `chart_column` VALUES ('40', '有效专利维持期', 'age', 'st_dt', '有效专利维持期（年）', '1', '0', '0');
